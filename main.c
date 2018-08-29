@@ -4,14 +4,15 @@
 
 int main (int argc, char *argv[]) 
 {
-	int c;
+	int c, fork;
 
 	while ((c = getopt (argc, argv, "n:hp")) != -1)
 	{
 		switch(c)
 		{
 			case 'n':
-				printf("Variable option chosen.\n");
+				fork = atoi(optarg);
+				printf("Variable option chosen with %d.\n", fork);
 				break;
 			case 'h':
 				printf("Help option chosen.\n");
