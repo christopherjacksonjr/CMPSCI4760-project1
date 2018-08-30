@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+void displayHelpMessage();
+
 int main (int argc, char *argv[]) 
 {
 	int c, fork;
@@ -15,10 +17,11 @@ int main (int argc, char *argv[])
 				printf("Variable option chosen with %d.\n", fork);
 				break;
 			case 'h':
-				printf("Help option chosen.\n");
+				displayHelpMessage();
 				break;
 			case 'p':
-				printf("perror option chosen.\n");
+				printf("%s: ", argv[0]);
+				perror("Error: Detailed error message");
 				break;
 			case '?':
 				if (optopt == 'c')
@@ -48,4 +51,14 @@ int main (int argc, char *argv[])
    	fprintf(stderr, "i:%d  process ID:%ld  parent ID:%ld  child ID:%ld\n",
            i, (long)getpid(), (long)getppid(), (long)childpid);
 	return 0;*/ 
+}
+
+void displayHelpMessage()
+{
+	printf("\nTo run this program you must run the executable file with one the following options:\n\n");
+	printf(" -h   : shows steps on how to use the program.\n");
+	printf(" -n x : changes the value of x.\n");
+	printf(" -p   : prints of an example of perror message.\n");
+	printf("\ni.e.  : ./ass1 -n 5\n\n");
+	printf("If no options are entered the program will run with default values.\n\n");
 }
