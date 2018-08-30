@@ -6,15 +6,17 @@ void displayHelpMessage();
 
 int main (int argc, char *argv[]) 
 {
-	int c, fork;
+	pid_t childpid = 0;
+        int i, n;
+	int c, number;
 
 	while ((c = getopt (argc, argv, "n:hp")) != -1)
 	{
 		switch(c)
 		{
 			case 'n':
-				fork = atoi(optarg);
-				printf("Variable option chosen with %d.\n", fork);
+				number = atoi(optarg);
+				printf("Variable option chosen with %d.\n", number);
 				break;
 			case 'h':
 				displayHelpMessage();
@@ -36,21 +38,18 @@ int main (int argc, char *argv[])
 		}
 	}
 
-	/*pid_t childpid = 0;
-   	int i, n;
-   	
-	if (argc != 2)
+	/*if (argc != 2)
 	{
       		fprintf(stderr, "Usage: %s processes\n", argv[0]);
       		return 1;
    	}
-   	n = atoi(argv[1]);
-   	for (i = 1; i < n; i++)
+   	n = atoi(argv[1]);*/
+   	for (i = 1; i < number; i++)
       		if (childpid = fork())
         		break;
    	fprintf(stderr, "i:%d  process ID:%ld  parent ID:%ld  child ID:%ld\n",
            i, (long)getpid(), (long)getppid(), (long)childpid);
-	return 0;*/ 
+	return 0; 
 }
 
 void displayHelpMessage()
