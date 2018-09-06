@@ -90,6 +90,7 @@ void program(int number)
 	for (i = 1; i < number; i++)
                 if (childpid = fork())
                         break;
+	sleep(10);
         fprintf(stderr, "i:%d  process ID:%ld  parent ID:%ld  child ID:%ld\n\n",
            i, (long)getpid(), (long)getppid(), (long)childpid);
 }
