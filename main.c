@@ -46,6 +46,7 @@ void program(int n, int k, int m)
 	for(j = 0; j < k; j++)
 	{ 
 		sleep(m);
+		wait();
         	fprintf(stderr, "i:%d  process ID:%ld  parent ID:%ld  child ID:%ld\n\n",
            i, (long)getpid(), (long)getppid(), (long)childpid);
 	}
