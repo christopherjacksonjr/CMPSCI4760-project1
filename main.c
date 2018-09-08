@@ -8,48 +8,43 @@ void program(int, int, int);
 
 int main (int argc, char *argv[]) 
 {
-	//int c, number;
-	int n, k, m;
-	
-	if(argc != 4)
-	{
-		displayHelpMessage();
-	}
-	else
-	{
-		n = atoi(argv[1]);
-		k = atoi(argv[2]);
-		m = atoi(argv[3]);
+	pid_t childpid = 0;
+	int i, n, nchars, c, j, k;
+	char in;
 
-		program(n, k, m);
+   	if (argc != 3) {   /* check for valid number of command-line arguments */
+      		displayHelpMessage();
+   	}
+
+   	n = atoi(argv[1]);
+	nchars = atoi(argv[2]);
+	char mybuf[nchars];   	
+
+
+	for (i = 1; i < n; i++)
+		if (childpid = fork())
+         		break;
+
+	for(j = 0; j < nchars; j++)
+	{
+		scanf(" %c", &in);
+		getchar();
+		mybuf[j] = in;
 	}
+
+	for(k = 0; k < nchars; k++)
+	{
+		printf("%c", mybuf[k]);
+	}
+	/*fprintf(stderr, "i:%d  process ID:%ld  parent ID:%ld  child ID:%ld\n",
+           i, (long)getpid(), (long)getppid(), (long)childpid);*/
 }
 
 void displayHelpMessage()
 {
 	printf("\nTo run this program you must run the executable file with one the following arguments:\n\n");
-	printf(" n   : Number of processes to fork off.\n");
-      	printf(" k   : Number of time program will loop.\n");
-       	printf(" m   : How long the program will sleep before it finishes executing.\n");
-        printf("\ni.e.  : ./ass1 3 5 2\n\n");
+	printf(" n        : Number of processes to fork off.\n");
+      	printf(" nchars   : Number of time program will loop.\n");
+        printf("\ni.e.  : ./ass1 3 5\n\n");
         printf("If no options are entered the program will not execute.\n\n");
-}
-
-void program(int n, int k, int m)
-{
-	pid_t childpid = 0;
-        int i, j;
-
-	for (i = 1; i < n; i++)
-                if (childpid = fork())
-                        break;
-	for(j = 0; j < k; j++)
-	{ 
-		sleep(m);
-		wait();
-		fprintf(stderr, "i:%d", i);
-		fprintf(stderr, "process ID:%ld", (long)getpid());
-		fprintf(stderr, "parent ID:%ld", (long)getppid());
-		fprintf(stderr, "child ID:%ld\n", (long)childpid);
-	}
 }
