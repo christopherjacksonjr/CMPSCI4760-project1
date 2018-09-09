@@ -18,8 +18,7 @@ int main (int argc, char *argv[])
 
    	n = atoi(argv[1]);
 	nchars = atoi(argv[2]);
-	char mybuf[nchars];   	
-
+	char mybuf[(nchars + 1)];   	
 
 	for (i = 1; i < n; i++)
 		if (childpid = fork())
@@ -32,10 +31,8 @@ int main (int argc, char *argv[])
 		mybuf[j] = in;
 	}
 
-	for(k = 0; k < nchars; k++)
-	{
-		printf("%c", mybuf[k]);
-	}
+	mybuf[(nchars + 1)] = '\0';
+	printf("%s\n", mybuf);
 	/*fprintf(stderr, "i:%d  process ID:%ld  parent ID:%ld  child ID:%ld\n",
            i, (long)getpid(), (long)getppid(), (long)childpid);*/
 }
