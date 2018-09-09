@@ -1,0 +1,19 @@
+cdbf341 was christopher jackson, 4 minutes ago, message: updating README
+e9fe488 was christopher jackson, 7 minutes ago, message: updating README
+672218c was christopher jackson, 9 minutes ago, message: adding Answers file
+f2c228f was christopher jackson, 18 minutes ago, message: adding comments + code clean up
+608f4f2 was christopher jackson, 31 minutes ago, message: fixing output with process ID
+b14abbb was christopher jackson, 34 minutes ago, message: After the loop, put a '\0' character then print array with one printf statement
+e683b97 was christopher jackson, 23 hours ago, message: replacing the final fprintf statement with a loop that reads
+68d21dc was christopher jackson, 28 hours ago, message: Modify Program 3.1 by replacing the final fprintf statement with four fprintf statements
+63e3a6f was christopher jackson, 29 hours ago, message: Modify Program 3.1 by putting a wait function call before the final fprintf statement
+fcec7c5 was christopher jackson, 29 hours ago, message: Put a loop around the final fprintf in Program 3.1
+dbbc348 was christopher jackson, 3 days ago, message: placing sleep(10) before final fprintf
+73ebf33 was christopher jackson, 7 days ago, message: error checking implemented
+9a7fb16 was christopher jackson, 10 days ago, message: modying program 3.1
+157c8a1 was christopher jackson, 10 days ago, message: displays help message and perror implemented
+55ccab1 was christopher jackson, 12 days ago, message: getopt option -n takes number
+f56bdf0 was christopher jackson, 12 days ago, message: getopt taking three options
+55c7b45 was christopher jackson, 12 days ago, message: testing Program 3.1 in the textbook
+ee58dd3 was christopher jackson, 12 days ago, message: testing that the makefile is working
+2338264 was christopher jackson, 12 days ago, message: adding readme
