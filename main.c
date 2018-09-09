@@ -32,9 +32,7 @@ int main (int argc, char *argv[])
 	}
 
 	mybuf[(nchars + 1)] = '\0';
-	printf("%s\n", mybuf);
-	/*fprintf(stderr, "i:%d  process ID:%ld  parent ID:%ld  child ID:%ld\n",
-           i, (long)getpid(), (long)getppid(), (long)childpid);*/
+	fprintf(stderr, "process ID:%ld - %s\n", (long)getpid(),  mybuf);
 }
 
 void displayHelpMessage()
