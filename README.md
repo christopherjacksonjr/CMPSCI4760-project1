@@ -44,25 +44,11 @@ Environment | URL
 
 Technology | Description
 --- | ---
-[getopt] | The getopt() function parses the command-line arguments.  Its
-        arguments argc and argv are the argument count and array as passed to
-        the main() function on program invocation.  An element of argv that
-        starts with '-' (and is not exactly "-" or "--") is an option
-        element.  The characters of this element (aside from the initial '-')
-        are option characters.  If getopt() is called repeatedly, it returns
-        successively each of the option characters from each of the option
-        elements.
-[perror] | The perror() function produces a message on standard error describing
-        the last error encountered during a call to a system or library
-        function.
-[fork]   | fork() creates a new process by duplicating the calling process.  The
-        new process is referred to as the child process.  The calling process
-        is referred to as the parent process.
-[sleep]  | sleep() causes the calling thread to sleep either until the number of
-        real-time seconds specified in seconds have elapsed or until a signal
-        arrives which is not ignored.
-[wait]   | The wait() system call suspends execution of the calling thread until
-        one of its children terminates.
+[getopt] | Parses the command-line arguments. 
+[perror] | Produces a message on standard error describing the last error encountered during a call to a system or library function.
+[fork]   | Creates a new process by duplicating the calling process.
+[sleep]  | Causes the calling thread to sleep either until the number of real-time seconds specified in seconds have elapsed or until a signal arrives which is not ignored.
+[wait]   | Suspends execution of the calling thread until one of its children terminates.
 [git-log] | Shows the commit logs.
 
 ### :lock: Passwords
