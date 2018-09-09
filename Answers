@@ -1,0 +1,69 @@
+1. Run Program 3.1 and observe the results for different numbers of processes.
+
+Ran program with numbers 1-15 and the program executes fairly quickly with all of these 
+numbers. The results from this is almost instantaneous. I set a maximum number that a 
+user may enter to 15 since there is a limit of processes that we can have on the server 
+at one time. 
+
+2. Fill in the actual process IDs of the processes in the diagram of Figure 3.2 for a run with
+command-line argument value of 4.
+
+When the program is run wiht the command line argument 4 these are the results: 
+i:1  process ID:29692  parent ID:26608  child ID:29693
+i:2  process ID:29693  parent ID:1  child ID:29694
+i:3  process ID:29694  parent ID:1  child ID:29695
+i:4  process ID:29695  parent ID:29694  child ID:0
+The process IDs are increasing by one as a new child is forked. I noticed that the child ID 
+of the 4th element is 0.
+
+3. Experiment with different values for the command-line argument to find out the largest 
+number of processes that the program can generate. Observe the fraction that are adopted by init.
+
+The largest number of processes that this program can generate is 19. Since we can only have 20 
+processes running at one time on the server (counting the parent process) after this the processes
+will be stuck in an infinite loop and eventually all the processes would need to be killed. 
+
+4. Place sleep(10); directly before the final fprintf statement in Program 3.1. What is the 
+maximum number of processes generated in this case?
+
+The maximum number of processes generated is the same, but with the sleep(10) placed directly
+before the final fprintf statement the program sleeps for 10 seconds before outputting the information
+on the process ID and child processes. 
+
+5. Put a loop around the final fprintf in Program 3.1. Have the loop execute k times. Put sleep(m); 
+inside this loop after the fprintf. Pass k and m on the command line. Run the program for several 
+values of n, k and m. Observe the results.
+
+n - is for the number of child processes forked off. 
+k - is the number of times the loop around the last print statement is ran (number of times child list is printed).
+m - is the number in seconds the program sleeps before printing.
+I noticed that as the values of k and m increase the program takes longer to execute. 
+
+6. Modify Program 3.1 by putting a wait function call before the final fprintf statement. How does 
+this affect the output of the program?
+
+Adding the wait function call before the final fprintf statement makes the program output in increments. It
+outputs the information then pauses for a second, then does some more outputting and repeats until the 
+program is completed. It seems as if it is waiting in between interations of the loop.
+
+7. Modify Program 3.1 by replacing the final fprintf statement with four fprintf statements, one each 
+for the four integers displayed. Only the last one should output a newline. What happens when you run 
+this program? Can you tell which process generated each part of the output? Run the program several 
+times and see if there is a difference in the output.
+           
+When I run this program the output is extremely hard to read. It takes me staring at the output for some time
+to figure out which process generated each part of the output. Each time the program is run the output is 
+consistently not very formatted and hard to read. 
+
+8. Modify Program 3.1 by replacing the final fprintf statement with a loop that reads nchars characters 
+from standard input, one character at a time, and puts them in an array called mybuf. The values of n 
+and nchars should be passed as command-line arguments. After the loop, put a '\0' character in entry 
+nchars of the array so that it contains a string. Output to standard error in a single fprintf the process 
+ID followed by a colon followed by the string in mybuf. Run the program for several values of n and nchars. 
+Observe the results. Press the Return key often and continue typing at the keyboard until all of the processes 
+have exited.
+
+The output of this program is weird since it is using multiple processes with standard input and output all
+at the same time. The program executes and set the command line arguments just fine but sometimes gets stuck
+or will go beyond the variable set. Also, after the program has executed it does some extra output that
+is not expected and I have to hit enter a couple of times to get things back to looking normal. 
